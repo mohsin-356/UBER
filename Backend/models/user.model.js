@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 //here we defien our user schema for uber driver
 const userSchema = new mongoose.Schema({
   fullname: {
