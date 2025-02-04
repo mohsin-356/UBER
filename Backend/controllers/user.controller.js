@@ -18,7 +18,7 @@ module.exports.registerUser = async (req, res, next) => {
       email,
       password: hashedPassword,
     });
-    const token = await userModel.generateAuthToken(user);
+    const token = await user.generateAuthToken(user);
     return res.status(201).json({ token, user });
   } catch (error) {
     return res.status(500).json({ message: error.message });
