@@ -3,6 +3,7 @@ const router = express.Router();
 const { check } = require("express-validator");
 //require the user controller
 const userController = require("../controllers/user.controller");
+const { route } = require("../app");
 router.post(
   "/register",
   [
@@ -26,5 +27,6 @@ router.post(
   ],
   userController.loginUser
 );
+route.get('/profile', userController.getUserProfile);
 
 module.exports = router;
