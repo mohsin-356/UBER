@@ -45,6 +45,7 @@ module.exports.loginUser = async (req, res, next) => {
             return res.status(401).json({ message: "Invalid Email or Password" });
         }
         const token = await user.generateAuthToken(user);
+        res.cookie('token',token);
         return res.status(200).json({ token, user });
     }
     catch (error)
@@ -54,5 +55,5 @@ module.exports.loginUser = async (req, res, next) => {
   
 }
 module.exports.getUserProfile = async (req, res, next) => {
-    
+res.status(200).json({ user: req.user });
 }
