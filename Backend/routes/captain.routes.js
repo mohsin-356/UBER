@@ -15,6 +15,11 @@ router.post('/register',[
     check('vehicle.vehicleType').isIn(['car','motorcycle','auto']).withMessage('Vehicle type must be either car, motorcycle or auto')
 ],captainController.registerCaptain);
 
+router.post('/login',[
+    check('email').isEmail().withMessage('Please enter a valid email address'),
+    check('password').isLength({min:6}).withMessage('Password must be at least 6 characters long')
+],captainController.loginCaptain);
+
 
 
 //export the captain routes

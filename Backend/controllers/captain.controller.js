@@ -31,3 +31,30 @@ module.exports.registerCaptain = async (req, res, next) => {
     res.status(400).send(error);
   }
 };
+module.exports.loginCaptain = async (req, res, next) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty())
+    {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    const { email, password } = req.body;
+    const captain = await captainModel.findOne({ email }).select("+password");
+    if (!captain)
+    {
+      return res.status(400).send("Invalid email or password");
+    }
+    const isPasswordCorrect = await captain.comparePassword(password);
+    if (!isPasswordCorrect)
+    {
+      return res.status(400).send("Invalid email or password");
+    }
+    const token = captain.generateAuthToken();
+    res.cookie('token',token);
+    res.status(200).send({ token, captain });
+  } 
+  catch (error)
+  {
+    res.status(400).send(error);
+  }
+};
