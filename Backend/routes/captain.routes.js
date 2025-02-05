@@ -1,5 +1,7 @@
 //require the captain controllers
 const captainController = require('../controllers/captain.controller');
+//require the auth middleware
+const authMiddleware  = require('../middlewares/auth.middleware');
 const { check } = require('express-validator');
 const express = require('express');
 const router = express.Router();
@@ -20,6 +22,7 @@ router.post('/login',[
     check('password').isLength({min:6}).withMessage('Password must be at least 6 characters long')
 ],captainController.loginCaptain);
 
+router.get('/profile',authMiddleware.authCaptain,captainController.getCaptainProfile);
 
 
 //export the captain routes

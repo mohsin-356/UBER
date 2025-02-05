@@ -58,3 +58,10 @@ module.exports.loginCaptain = async (req, res, next) => {
     res.status(400).send(error);
   }
 };
+module.exports.getCaptainProfile = async (req, res, next) => {
+  try {
+    res.status(200).json({ captain: req.captain });
+  } catch (error) {
+    res.status(400).send(error);
+    }       
+}
