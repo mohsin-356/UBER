@@ -1,6 +1,27 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 const CaptainSignup = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [firstName, setFirstname] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [captainData, setCaptainData] = useState({});
+    const submitHandler = (e) => {
+      e.preventDefault();
+      setCaptainData({
+        username: {
+          firstname: firstName,
+          lastname: lastName
+        },
+        email: email,
+        password: password,
+      })
+      console.log(captainData);
+      setFirstname('');
+      setLastName('');
+      setEmail('');
+      setPassword('');
+    }
   return (
     <div className="p-7 h-screen flex flex-col justify-between">
     <div>
@@ -50,7 +71,7 @@ const CaptainSignup = () => {
         <button className='bg-[#111] text-white font-semibold mb-5 rounded px-4 py-2 border w-full text-base placeholder:text-base'>
           Sign up
         </button>
-        <p className="text-center">Already Registered? <Link to={'/login'} className="text-blue-600">Login here</Link> </p>
+        <p className="text-center">Already Registered, Captain ? <Link to={'/captain-login'} className="text-blue-600">Login here, Captain !</Link> </p>
       </form>
     </div>
     <div>
