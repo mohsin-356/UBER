@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Routes ,Route} from 'react-router-dom'
-import Home from './pages/Start'
+import Home from './pages/Home'
 import UserLogin from './pages/UserLogin'
 import UserSignup from './pages/UserSignup'
 import CaptainLogin from './pages/CaptainLogin'
