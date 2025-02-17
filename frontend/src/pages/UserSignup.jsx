@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import UserContext from '../context/UserContext';
-dotenv.config();
+// dotenv.config();
 const UserSignup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
