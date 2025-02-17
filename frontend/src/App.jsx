@@ -10,7 +10,7 @@ import Start from './pages/Start'
 
 const App = () => {
   const ans =useContext(UserDataContext);
-  console.log(ans);
+
   
   return (
     <div >
