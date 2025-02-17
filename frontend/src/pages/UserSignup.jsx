@@ -2,28 +2,28 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 // import dotenv from 'dotenv';
-import UserContext from '../context/UserContext';
+import {UserDataContext} from '../context/UserContext';
 // dotenv.config();
 const UserSignup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstname] = useState('');
   const [lastName, setLastName] = useState('');
-  const [userData, setUserData] = useState({});
+  // const [userData, setUserData] = useState({});
   const navigate = useNavigate();
-  const {user,setUser}=React.useContext(UserContext);
+  const {user,setUser}=React.useContext(UserDataContext);
   const submitHandler =async (e) => {
     e.preventDefault();
 
     const newUser={
-      username: {
+      fullname: {
         firstname: firstName,
         lastname: lastName
       },
       email: email,
       password: password,
     };
-    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/user/register`,newUser);
+    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/register`,newUser);
     if (response.status==201)
     {
       const data=response.data;
@@ -51,7 +51,6 @@ const UserSignup = () => {
               className='bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-base placeholder:text-base'
               required
               type="text"
-              name="firstname"
               placeholder='First Name'
             />
             <input
@@ -60,7 +59,6 @@ const UserSignup = () => {
               className='bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-base placeholder:text-base'
               required
               type="text"
-              name="lastname"
               placeholder='Last Name'
             />
           </div>
@@ -71,7 +69,6 @@ const UserSignup = () => {
             className='bg-[#eeeeee] mb-5 rounded px-4 py-2 border w-full text-base placeholder:text-base'
             required
             type="email"
-            name="email"
           />
           <h3 className="text-base font-medium mb-2">What's your Password</h3>
           <input
@@ -80,7 +77,6 @@ const UserSignup = () => {
             className='bg-[#eeeeee] mb-7 rounded px-4 py-2 border w-full text-base placeholder:text-base'
             required
             type="password"
-            name="password"
           />
           <button className='bg-[#111] text-white font-semibold mb-5 rounded px-4 py-2 border w-full text-base placeholder:text-base'>
             Sign up
