@@ -1,17 +1,19 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { UserDataContext } from "../context/UserContext";
 
 const UserLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userData, setUserData] = useState({});
-  
+  // const [userData, setUserData] = useState({});
+  const { user, setUser } = useContext(UserDataContext);
+  const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     // TODO: send request to backend to authenticate user
     console.log('User Login', { email, password });
-    setUserData({email:email, password:password}); // Update state with user data for display purposes
-    console.log('User Data',userData.email,userData.password);
+    setUserData({ email: email, password: password }); // Update state with user data for display purposes
+    console.log('User Data', userData.email, userData.password);
     // Reset form state
     setEmail('');
     setPassword('');
@@ -20,7 +22,7 @@ const UserLogin = () => {
     <div className="p-7 h-screen flex flex-col justify-between">
       <div>
         <img className='w-16 mb-10' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="uber logo" />
-        <form onSubmit={(e)=>{
+        <form onSubmit={(e) => {
           submitHandler(e);
         }}>
           <h3 className="text-lg font-medium mb-2">What's your Email</h3>
