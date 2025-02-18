@@ -38,6 +38,7 @@ module.exports.loginUser = async (req, res, next) => {
     return res.status(400).json({ errors: errors.array() });
   }
   try {
+    console.log('you are in login controller !')
     const { email, password } = req.body;
     const user = await userModel.findOne({ email }).select("+password");
     if (!user) {
@@ -48,6 +49,7 @@ module.exports.loginUser = async (req, res, next) => {
       return res.status(401).json({ message: "Invalid Email or Password" });
     }
     const token = await user.generateAuthToken(user);
+    console.log(token);
     res.cookie("token", token);
     return res.status(200).json({ token, user });
   } catch (error) {
