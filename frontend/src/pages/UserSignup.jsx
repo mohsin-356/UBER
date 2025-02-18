@@ -26,7 +26,7 @@ const UserSignup = () => {
     const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/register`,newUser);
     console.log(response.status);
     
-    if (response.status==201)
+    if (response.statusCode==201)
     {
       const data=response.data;
       setUser(data.user);
