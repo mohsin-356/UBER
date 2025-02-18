@@ -9,11 +9,17 @@ const blackListTokenModel = require("../models/blacklistToken.model");
 
 module.exports.registerUser = async (req, res, next) => {
   const errors = validationResult(req);
-  if (!errors.isEmpty()) {
+  if (!errors.isEmpty()) 
+  {
     return res.status(400).json({ errors: errors.array() });
   }
   try {
+    console.log(req.body);
     const { fullname, email, password } = req.body;
+    const isUserExist = await userModel.findOne({ email });
+    if (isUserExist) {
+      return res.status(400).json({ message: "Email already exists" });
+    }
     const hashedPassword = await userModel.hashPassword(password);
     const user = await userService.createUser({
       firstname: fullname.firstname,
@@ -21,10 +27,6 @@ module.exports.registerUser = async (req, res, next) => {
       email,
       password: hashedPassword,
     });
-    const isUserExist = await userModel.findOne({ email });
-    if (isUserExist) {
-      return res.status(400).json({ message: "Email already exists" });
-    }
     const token = await user.generateAuthToken(user);
     return res.status(201).json({ token, user });
   } catch (error) {
