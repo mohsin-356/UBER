@@ -18,8 +18,9 @@ const UserLogin = () => {
     const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/login`, userData);
     if (response.status == 200) 
     {
-      console.log("response status="+response.status);
-      console.log("User token from login ="+response.data.token);
+      const { token, user } = response.data;
+      console.log("User token after De-structuring= "+token);
+      localStorage.setItem("token", token).then(() => {console.log("User token ADDED in the local storage!")});
       const data = response.data;
       setUser(data.user);
       navigate('/home');
