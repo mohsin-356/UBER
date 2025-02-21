@@ -20,7 +20,7 @@ const UserLogin = () => {
     {
       const { token, user } = response.data;
       console.log("User token after De-structuring= "+token);
-      localStorage.setItem("token", token).then(() => {console.log("User token ADDED in the local storage!")});
+      localStorage.setItem("token", token);
       const data = response.data;
       setUser(data.user);
       navigate('/home');
