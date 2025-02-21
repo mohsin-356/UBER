@@ -25,7 +25,7 @@ const App = () => {
         <Route path="/home" exact element={<UserProtectWrapper>
           <Home />
         </UserProtectWrapper>} />
-        <Route path="/logout" exact element={<UserProtectWrapper>
+        <Route path="/user/logout" exact element={<UserProtectWrapper>
           <UserLogout />
         </UserProtectWrapper>} />
       </Routes>
