@@ -16,19 +16,29 @@ const CaptainSignup = () => {
     const {captain, setCaptain} = useContext(CaptainDataContext);
     const submitHandler = (e) => {
       e.preventDefault();
-      setCaptainData({
-        username: {
+      const captainData={
+        fullName: {
           firstname: firstName,
           lastname: lastName
         },
         email: email,
         password: password,
-      })
+        vehicle:{
+          color:vehicleColor,
+          plate:vehiclePlate,
+          capacity:vehicleCapacity,
+          type:vehicleType
+        }
+      };
       console.log(captainData);
       setFirstname('');
       setLastName('');
       setEmail('');
       setPassword('');
+      setVehicleColor('');
+      setVehiclePlate('');
+      setVehicleCapacity('');
+      setVehicleType('');
     }
   return (
     <div className="p-7 h-screen flex flex-col justify-between">
@@ -142,5 +152,4 @@ const CaptainSignup = () => {
   </div>
   )
 }
-
-export default CaptainSignup
+export default CaptainSignup;
