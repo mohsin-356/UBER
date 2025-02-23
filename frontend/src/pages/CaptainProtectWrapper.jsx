@@ -29,6 +29,7 @@ const UserProtectWrapper = ({ children }) =>
      })
      .catch(error=>{
         console.log(error);
+        localStorage.removeItem('token');
         navigate('/captain-login');
      })
     
