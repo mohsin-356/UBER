@@ -19,7 +19,7 @@ const CaptainSignup = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const captainData = {
-      fullName: 
+      fullName:
       {
         firstname: firstName,
         lastname: lastName
@@ -35,6 +35,14 @@ const CaptainSignup = () => {
       }
     };
     console.log(captainData);
+    const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/captains/register`, captainData);
+    if (response.status==201)
+    {
+      const data = response.data;
+      setCaptain(data.captain);
+      localStorage.setItem('token',data.token);
+      navigate('/captain-home');  
+    }
     setFirstname('');
     setLastName('');
     setEmail('');
