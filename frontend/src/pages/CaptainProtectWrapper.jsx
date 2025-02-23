@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CaptainDataContext } from '../context/CaptainContext';
 import axios from 'axios';
-const UserProtectWrapper = ({ children }) => 
+const CaptainProtectWrapper = ({ children }) => 
 {
     const token = localStorage.getItem('token');
     const navigate = useNavigate();
@@ -47,4 +47,4 @@ const UserProtectWrapper = ({ children }) =>
         </>
     )
 }
-export default UserProtectWrapper
+export default CaptainProtectWrapper;
