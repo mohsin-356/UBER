@@ -1,21 +1,22 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CaptainDataContext } from '../context/CaptainContext';
 import axios from 'axios';
 const CaptainLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [captain, setCaptain] = useContext(CaptainDataContext);
+  const {captain, setCaptain} = useContext(CaptainDataContext);
   const navigate = useNavigate();
 
   const submitHandler =async (e) => {
     e.preventDefault();
     const captain={
-      email,
-      password,
+      email:email,
+      password:password,
     }
     // TODO: send request to backend to authenticate captain
     const response= await axios.post(`${import.meta.env.VITE_BASE_URL}/captains/login`,captain);
+    console.log(response);
     if (response.status==200)
     {
       const { token, captain } = response.data;
