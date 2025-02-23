@@ -9,6 +9,7 @@ import { UserDataContext } from './context/UserContext'
 import Start from './pages/Start'
 import UserProtectWrapper from './pages/UserProtectWrapper'
 import UserLogout from './pages/UserLogout'
+import CaptainHome from './pages/CaptainHome'
 
 const App = () => {
   const ans = useContext(UserDataContext);
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/user/logout" exact element={<UserProtectWrapper>
           <UserLogout />
         </UserProtectWrapper>} />
+        <Route path="/captain-home" exact element={<CaptainHome/>} />
       </Routes>
     </div>
   )

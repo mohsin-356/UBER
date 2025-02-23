@@ -19,7 +19,7 @@ const CaptainSignup = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const captainData = {
-      fullName:
+      fullname:
       {
         firstname: firstName,
         lastname: lastName
@@ -31,7 +31,7 @@ const CaptainSignup = () => {
         color: vehicleColor,
         plate: vehiclePlate,
         capacity: vehicleCapacity,
-        type: vehicleType
+        vehicleType: vehicleType
       }
     };
     console.log(captainData);
