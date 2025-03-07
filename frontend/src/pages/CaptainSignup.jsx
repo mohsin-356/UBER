@@ -6,7 +6,7 @@ const CaptainSignup = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [firstName, setFirstname] = useState('');
+  const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   // const [captainData, setCaptainData] = useState({});
 
@@ -102,7 +102,7 @@ const CaptainSignup = () => {
           <div className='flex gap-4 mb-5'>
             <input
               value={firstName}
-              onChange={(e) => setFirstname(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
               className='bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-base placeholder:text-base'
               required
               type="text"
