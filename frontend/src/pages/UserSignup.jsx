@@ -9,7 +9,7 @@ const UserSignup = () => {
   const [password, setPassword] = useState('');
   const [firstName, setFirstname] = useState('');
   const [lastName, setLastName] = useState('');
-  // const [userData, setUserData] = useState({});
+
   const navigate = useNavigate();
   const { user, setUser } = React.useContext(UserDataContext);
   const submitHandler = async (e) => {
