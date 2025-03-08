@@ -38,9 +38,9 @@ const App = () => {
           <CaptainHome/>
         </CaptainProtectWrapper>} />
 
-        <Route path="/captain/logout" exact element={<UserProtectWrapper>
+        <Route path="/captain/logout" exact element={<CaptainProtectWrapper>
           <CaptainLogout />
-        </UserProtectWrapper>} />
+        </CaptainProtectWrapper>} />
 
       </Routes>
     </div>
