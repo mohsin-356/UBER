@@ -14,13 +14,12 @@ const CaptainLogin = () => {
       email: email,
       password: password,
     }
-    // TODO: send request to backend to authenticate captain
     const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/captains/login`, captain);
     console.log(response);
     if (response.status == 200) {
       const { token, captain } = response.data;
       console.log("captain token after De-structuring= " + token);
-      localStorage.setItem('token', token);
+      localStorage.setItem("token", token);
       const data = response.data;
       setCaptain(data.captain);
       navigate('/captain-home');
