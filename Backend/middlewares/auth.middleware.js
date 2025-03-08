@@ -1,4 +1,5 @@
 const userModel = require("../models/user.model");
+const captainModel = require("../models/captain.model");
 
 const blackListTokenModel = require("../models/blacklistToken.model");
 const bcrypt = require("bcryptjs");

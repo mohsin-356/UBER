@@ -19,7 +19,8 @@ const CaptainLogin = () => {
     if (response.status == 200) {
       const { token, captain } = response.data;
       console.log("captain token after De-structuring= " + token);
-      localStorage.setItem("token", token);
+      localStorage.setItem("token", token)
+   
       const data = response.data;
       setCaptain(data.captain);
       navigate('/captain-home');
