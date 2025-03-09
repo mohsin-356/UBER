@@ -62,12 +62,9 @@ module.exports.getCaptainProfile = async (req, res, next) => {
   }
 };
 module.exports.logoutCaptain = async (req, res, next) => {
-  try {
-    const token = req.cookie.token || req.headers.authorization?.split(" ")[1];
+    const token = req.cookies.token || req.headers.authorization?.split(" ")[1];
     await blackListTokenModel.create({ token });
     res.clearCookie("token");
-    res.status(200).send("Logged out successfully");
-  } catch (error) {
-    res.status(400).send(error);
-  }
+    return res.status(200).json({ message: "Logged out" });
+
 };
