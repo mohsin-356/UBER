@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Home = () => {
+  const [pickup, setPickup] = useState('');
+  const [destination, setDestination] = useState('');
   const submitHandler=(e)=>{
     e.preventDefault();
   }
