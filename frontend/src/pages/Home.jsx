@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useGSAP } from '@gsap/react'
 import gsap from "gsap";
+import 'remixicon/fonts/remixicon.css'
 const Home = () => {
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
@@ -40,6 +41,9 @@ const Home = () => {
       </div>
       <div className=" flex flex-col justify-end h-screen absolute top-0 w-full">
         <div className="h-[30%] p-6 bg-white relative">
+          <h5 className="absolute top-6 right-6 text-2xl">
+            <i class="ri-arrow-down-wide-line"></i>
+          </h5>
           <h4 className="text-2xl font-semibold">Find a trip</h4>
           <form
             className="relative py-3"
