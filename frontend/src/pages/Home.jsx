@@ -7,6 +7,7 @@ const Home = () => {
   const [destination, setDestination] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
   const panelRef = useRef(null);
+  const panelCloseRef = useRef(null);
   const submitHandler = (e) => {
     e.preventDefault();
   };
@@ -15,13 +16,19 @@ const Home = () => {
       gsap.to(panelRef.current, {
         height: '70%', duration:
           0.5
-      })
+      });
+      gsap.to(panelCloseRef.current, {
+        opacity: 1
+      });
     }
     else {
       gsap.to(panelRef.current, {
         height: '0%', duration:
           0.5
-      })
+      });
+      gsap.to(panelCloseRef.current, {
+        opacity: 0
+      });
     }
   }, [panelOpen]);
   return (
@@ -41,7 +48,9 @@ const Home = () => {
       </div>
       <div className=" flex flex-col justify-end h-screen absolute top-0 w-full">
         <div className="h-[30%] p-6 bg-white relative">
-          <h5 className="absolute top-6 right-6 text-2xl">
+          <h5 ref={panelCloseRef} onClick={()=>{
+            setPanelOpen(false)
+          }} className="absolute top-6 right-6 text-2xl">
             <i class="ri-arrow-down-wide-line"></i>
           </h5>
           <h4 className="text-2xl font-semibold">Find a trip</h4>
