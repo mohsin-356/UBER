@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useGSAP } from '@gsap/react'
 import gsap from "gsap";
 import 'remixicon/fonts/remixicon.css'
+import LocationSearchPanel from "../components/LocationSearchPanel";
 const Home = () => {
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
@@ -14,8 +15,10 @@ const Home = () => {
   useGSAP(function () {
     if (panelOpen) {
       gsap.to(panelRef.current, {
-        height: '70%', duration:
-          0.5
+        height: '70%',
+        duration:0.5,
+        opacity: 1,
+        padding:'24px'
       });
       gsap.to(panelCloseRef.current, {
         opacity: 1
@@ -23,8 +26,9 @@ const Home = () => {
     }
     else {
       gsap.to(panelRef.current, {
-        height: '0%', duration:
-          0.5
+        height: '0%',
+        duration:0.5,
+        opacity: 1
       });
       gsap.to(panelCloseRef.current, {
         opacity: 0
@@ -50,7 +54,7 @@ const Home = () => {
         <div className="h-[30%] p-6 bg-white relative">
           <h5 ref={panelCloseRef} onClick={()=>{
             setPanelOpen(false)
-          }} className="absolute top-6 right-6 text-2xl">
+          }} className="absolute opacity-0 top-6 right-6 text-2xl">
             <i class="ri-arrow-down-wide-line"></i>
           </h5>
           <h4 className="text-2xl font-semibold">Find a trip</h4>
@@ -83,8 +87,8 @@ const Home = () => {
             />
           </form>
         </div>
-        <div ref={panelRef} className="bg-red-500 h-0">
-
+        <div ref={panelRef} className="bg-white opacity-0 h-0">
+          <LocationSearchPanel/>
         </div>
       </div>
     </div>
