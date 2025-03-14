@@ -16,9 +16,9 @@ const Home = () => {
     if (panelOpen) {
       gsap.to(panelRef.current, {
         height: '70%',
-        duration:0.5,
+        duration: 0.5,
         opacity: 1,
-        padding:'24px'
+        padding: '24px'
       });
       gsap.to(panelCloseRef.current, {
         opacity: 1
@@ -27,7 +27,7 @@ const Home = () => {
     else {
       gsap.to(panelRef.current, {
         height: '0%',
-        duration:0.5,
+        duration: 0.5,
         opacity: 1
       });
       gsap.to(panelCloseRef.current, {
@@ -52,7 +52,7 @@ const Home = () => {
       </div>
       <div className=" flex flex-col justify-end h-screen absolute top-0 w-full">
         <div className="h-[30%] p-6 bg-white relative">
-          <h5 ref={panelCloseRef} onClick={()=>{
+          <h5 ref={panelCloseRef} onClick={() => {
             setPanelOpen(false)
           }} className="absolute opacity-0 top-6 right-6 text-2xl">
             <i class="ri-arrow-down-wide-line"></i>
@@ -88,7 +88,18 @@ const Home = () => {
           </form>
         </div>
         <div ref={panelRef} className="bg-white opacity-0 h-0">
-          <LocationSearchPanel/>
+          <LocationSearchPanel />
+        </div>
+      </div>
+      <div className="fixed w-full z-10 buttom-0 bg-white p-5">
+        <div className='flex w-full bg-red-500 items-center justify-between'>
+          <img className='h-10' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1652995234/assets/92/8d4288-e896-4333-9bc2-c60c49f2a095/original/UberXL_Black_v2.png" alt="car" />
+          <div className='bg-green-500 w-1/2'>
+            <h4 className='font-medium text-sm'>UberGo<span><i className="ri-user-fill"></i>4</span></h4>
+            <h5 className='font-medium text-sm'>2 mins away</h5>
+            <p className='font-normal text-xs text-gray-600'>Affordable,Compact rides</p>
+          </div>
+          <h2 className='text-xl font-semibold'>$193.23</h2>
         </div>
       </div>
     </div>
