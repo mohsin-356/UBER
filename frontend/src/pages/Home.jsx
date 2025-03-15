@@ -207,7 +207,7 @@ const Home = () => {
       {/* Ride Selection Bar */}
       <div className="fixed w-full z-10 bottom-0 bg-white px-3 py-6">
         <h3 className="text-2xl font-semibold mb-5">Choose a vehicle</h3>
-        <div className="flex border-2 mb-2 border-black rounded-xl p-3 w-full items-center justify-between">
+        <div className="flex border-2 mb-2 active:border-black rounded-xl p-3 w-full items-center justify-between">
           <img
             className="h-12"
             src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1652995234/assets/92/8d4288-e896-4333-9bc2-c60c49f2a095/original/UberXL_Black_v2.png"
@@ -224,7 +224,7 @@ const Home = () => {
           </div>
           <h2 className="text-xl font-semibold">$193.23</h2>
         </div>
-        <div className="flex border-2 mb-2 border-black rounded-xl p-3 w-full items-center justify-between">
+        <div className="flex border-2 mb-2 active:border-black rounded-xl p-3 w-full items-center justify-between">
           <img
             className="h-12"
             src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_538,w_956/v1698944322/assets/92/00189a-71c0-4f6d-a9de-1b6a85239079/original/UberMoto-India-Orange.png"
@@ -241,7 +241,7 @@ const Home = () => {
           </div>
           <h2 className="text-xl font-semibold">$65</h2>
         </div>
-        <div className="flex border-2 mb-2 border-black rounded-xl p-3 w-full items-center justify-between">
+        <div className="flex border-2 mb-2 active:border-black rounded-xl p-3 w-full items-center justify-between">
           <img
             className="h-12"
             src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1648431773/assets/1d/db8c56-0204-4ce4-81ce-56a11a07fe98/original/Uber_Auto_558x372_pixels_Desktop.png"
