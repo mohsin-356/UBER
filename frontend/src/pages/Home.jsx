@@ -7,6 +7,7 @@ const Home = () => {
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
+  const [vehiclePanel, setVehiclePanel] = useState(false);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
 
