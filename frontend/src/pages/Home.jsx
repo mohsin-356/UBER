@@ -1,13 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import 'remixicon/fonts/remixicon.css'
 import LocationSearchPanel from "../components/LocationSearchPanel";
 
 const Home = () => {
+  
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
   const [vehiclePanel, setVehiclePanel] = useState(false);
+  const vehiclePanelRef=useRef(null);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
 
@@ -15,7 +18,7 @@ const Home = () => {
     e.preventDefault();
   };
 
-  useEffect(() => {
+  useGSAP(function(){
     if (panelOpen)
     {
       gsap.to(panelRef.current,
@@ -44,6 +47,9 @@ const Home = () => {
       });
     }
   }, [panelOpen]);
+  useGSAP(function(){
+
+  })
 
   return (
     <div className="h-screen relative overflow-hidden">
@@ -104,7 +110,7 @@ const Home = () => {
       </div>
 
       {/* Ride Selection Bar */}
-      <div className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6">
+      <div ref={vehiclePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6">
         <h3 className="text-2xl font-semibold mb-5">Choose a vehicle</h3>
         <div className="flex border-2 mb-2 active:border-black rounded-xl p-3 w-full items-center justify-between">
           <img
