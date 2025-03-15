@@ -16,23 +16,30 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (panelOpen) {
-      gsap.to(panelRef.current, {
+    if (panelOpen)
+    {
+      gsap.to(panelRef.current,
+      {
         height: '70%',
         duration: 0.5,
         opacity: 1,
         padding: '24px'
       });
-      gsap.to(panelCloseRef.current, {
+      gsap.to(panelCloseRef.current,
+      {
         opacity: 1
       });
-    } else {
-      gsap.to(panelRef.current, {
+    }
+    else
+    {
+      gsap.to(panelRef.current,
+      {
         height: '0%',
         duration: 0.5,
         opacity: 0
       });
-      gsap.to(panelCloseRef.current, {
+      gsap.to(panelCloseRef.current,
+      {
         opacity: 0
       });
     }
@@ -92,7 +99,7 @@ const Home = () => {
 
         {/* Location Search Panel */}
         <div ref={panelRef} className="bg-white opacity-0 h-0">
-          <LocationSearchPanel />
+          <LocationSearchPanel vehiclePanel={vehiclePanel} setVehiclePanel={setVehiclePanel} />
         </div>
       </div>
 
