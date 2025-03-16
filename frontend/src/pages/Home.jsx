@@ -12,7 +12,7 @@ const Home = () => {
   const [destination, setDestination] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
   const [vehiclePanel, setVehiclePanel] = useState(false);
-  const [confirmRidePanel, setconfirmRidePanel] = useState(false);
+  const [confirmRidePanel, setConfirmRidePanel] = useState(false);
   const vehiclePanelRef=useRef(null);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
@@ -151,7 +151,7 @@ const Home = () => {
 
       {/* Vehicle Selection Bar */}
       <div ref={vehiclePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-10">
-        <VehiclePanel setconfirmRidePanel={setconfirmRidePanel} setVehiclePanel={setVehiclePanel} />
+        <VehiclePanel setConfirmRidePanel={setConfirmRidePanel} setVehiclePanel={setVehiclePanel} />
       </div>
       {/* Confirm Ride Selection Bar */}
       <div ref={confirmRidePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-10">
