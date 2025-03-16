@@ -48,8 +48,23 @@ const Home = () => {
     }
   }, [panelOpen]);
   useGSAP(function(){
-
-  })
+    if(vehiclePanel)
+    {
+      gsap.to(vehiclePanelRef.current,
+      {
+        y: '0%',
+        duration: 0.5
+      });
+    }
+    else
+    {
+      gsap.to(vehiclePanelRef.current,
+      {
+        y: '100%',
+        duration: 0.5
+      });
+    }
+  },[vehiclePanel])
 
   return (
     <div className="h-screen relative overflow-hidden">
@@ -105,12 +120,15 @@ const Home = () => {
 
         {/* Location Search Panel */}
         <div ref={panelRef} className="bg-white opacity-0 h-0">
-          <LocationSearchPanel vehiclePanel={vehiclePanel} setVehiclePanel={setVehiclePanel} />
+          <LocationSearchPanel setPanelOpen={setPanelOpen} setVehiclePanel={setVehiclePanel} />
         </div>
       </div>
 
       {/* Ride Selection Bar */}
-      <div ref={vehiclePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6">
+      <div ref={vehiclePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-10">
+      <h5 onClick={()=>{
+        setVehiclePanel(false);
+      }} className="p-1 text-center w-[93%] absolute top-0"><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5>
         <h3 className="text-2xl font-semibold mb-5">Choose a vehicle</h3>
         <div className="flex border-2 mb-2 active:border-black rounded-xl p-3 w-full items-center justify-between">
           <img
