@@ -12,10 +12,10 @@ const LocationSearchPanel = (props) => {
         <div>
             {/* THIS IS A SAMPLE DATA */}
             {
-                locations.map(function (element,index) {
+                locations.map(function (element, index) {
                     return <div onClick={()=>{
-                        props.set
-                    }} key={index}  className="flex gap-4 border-2 p-3 border-gray-50 active:border-black rounded-xl my-2 items-center justify-items-start">
+                        props.setVehiclePanel(true);
+                    }} key={index} className="flex gap-4 border-2 p-3 border-gray-50 active:border-black rounded-xl my-2 items-center justify-items-start">
                         <h2 className='bg-[#eee] h-8 flex items-center justify-center w-12  rounded-full'> <i className="ri-map-pin-line text-2xl text-gray-500"></i></h2>
                         <h4 className="text-md font-semibold">{element}</h4>
                     </div>
