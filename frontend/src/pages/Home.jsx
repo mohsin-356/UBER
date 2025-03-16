@@ -70,12 +70,12 @@ const Home = () => {
       });
     }
   },[vehiclePanel]);
-  
+
 //in progress
   useGSAP(function(){
     if(confirmRidePanel)
     {
-      gsap.to(vehiclePanelRef.current,
+      gsap.to(confirmRidePanelRef.current,
       {
         y: '0%',
         duration: 0.5
@@ -83,7 +83,7 @@ const Home = () => {
     }
     else
     {
-      gsap.to(vehiclePanelRef.current,
+      gsap.to(confirmRidePanelRef.current,
       {
         y: '100%',
         duration: 0.5
@@ -151,7 +151,7 @@ const Home = () => {
 
       {/* Vehicle Selection Bar */}
       <div ref={vehiclePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-10">
-        <VehiclePanel setVehiclePanel={setVehiclePanel} />
+        <VehiclePanel setconfirmRidePanel={setconfirmRidePanel} setVehiclePanel={setVehiclePanel} />
       </div>
       {/* Confirm Ride Selection Bar */}
       <div ref={confirmRidePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-10">
