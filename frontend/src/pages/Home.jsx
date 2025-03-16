@@ -4,6 +4,7 @@ import gsap from "gsap";
 import 'remixicon/fonts/remixicon.css'
 import LocationSearchPanel from "../components/LocationSearchPanel";
 import VehiclePanel from "../components/VehiclePanel";
+import ConfirmRide from "../components/ConfirmRide";
 
 const Home = () => {
   
@@ -11,9 +12,11 @@ const Home = () => {
   const [destination, setDestination] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
   const [vehiclePanel, setVehiclePanel] = useState(false);
+  const [confirmRidePanel, setconfirmRidePanel] = useState(false);
   const vehiclePanelRef=useRef(null);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
+  const confirmRidePanelRef = useRef(null);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -48,6 +51,7 @@ const Home = () => {
       });
     }
   }, [panelOpen]);
+
   useGSAP(function(){
     if(vehiclePanel)
     {
@@ -65,7 +69,27 @@ const Home = () => {
         duration: 0.5
       });
     }
-  },[vehiclePanel])
+  },[vehiclePanel]);
+  
+//in progress
+  useGSAP(function(){
+    if(confirmRidePanel)
+    {
+      gsap.to(vehiclePanelRef.current,
+      {
+        y: '0%',
+        duration: 0.5
+      });
+    }
+    else
+    {
+      gsap.to(vehiclePanelRef.current,
+      {
+        y: '100%',
+        duration: 0.5
+      });
+    }
+  },[confirmRidePanel])
 
   return (
     <div className="h-screen relative overflow-hidden">
@@ -125,9 +149,13 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Ride Selection Bar */}
+      {/* Vehicle Selection Bar */}
       <div ref={vehiclePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-10">
         <VehiclePanel setVehiclePanel={setVehiclePanel} />
+      </div>
+      {/* Confirm Ride Selection Bar */}
+      <div ref={confirmRidePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-10">
+        <ConfirmRide  />
       </div>
     </div>
   );

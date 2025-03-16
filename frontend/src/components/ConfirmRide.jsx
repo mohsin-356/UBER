@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ConfirmRide = () => {
   return (
@@ -6,4 +6,4 @@ const ConfirmRide = () => {
   )
 }
 
-export default ConfirmRide
+export default ConfirmRide;
