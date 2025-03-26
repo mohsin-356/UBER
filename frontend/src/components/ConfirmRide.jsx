@@ -9,7 +9,9 @@ const ConfirmRide = () => {
 
       <div className='flex gap-2 items-center justify-between flex-col'>
         <img className='h-20' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1652995234/assets/92/8d4288-e896-4333-9bc2-c60c49f2a095/original/UberXL_Black_v2.png" alt="" />
+        
         <div className='w-full'>
+
           <div className='flex items-center gap-5'>
           <i class="text-lg ri-map-pin-2-fill"></i>
           <div>
@@ -17,8 +19,24 @@ const ConfirmRide = () => {
             <p className='text-sm -mt-1 text-gray-600'>Saleemi chowk,Faisalabad</p>
           </div>
           </div>
-          <div></div>
-          <div></div>
+
+          <div className='flex items-center gap-5'>
+          <i class="text-lg ri-map-pin-2-fill"></i>
+          <div>
+            <h3 className='text-lg font-medium'>562/11-A</h3>
+            <p className='text-sm -mt-1 text-gray-600'>Saleemi chowk,Faisalabad</p>
+          </div>
+          </div>
+
+          <div className='flex items-center gap-5'>
+         
+          <i class="text-lg ri-currency-line"></i>
+          <div>
+            <h3 className='text-lg font-medium'>562/11-A</h3>
+            <p className='text-sm -mt-1 text-gray-600'>Saleemi chowk,Faisalabad</p>
+          </div>
+          </div>
+
         </div>
 
         <button className='w-full bg-green-600 text-white font-semibold p-2 rounded-lg'>Confirm</button>
