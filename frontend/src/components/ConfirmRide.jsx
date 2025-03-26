@@ -2,6 +2,7 @@ import React from 'react';
 const ConfirmRide = () => {
   return (
     <div>
+      <h1>hellow world</h1>
       <h5 onClick={() => {
         props.setVehiclePanel(false);
       }} className="p-1 text-center w-[93%] absolute top-0"><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5>
