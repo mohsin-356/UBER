@@ -6,25 +6,27 @@ import LocationSearchPanel from "../components/LocationSearchPanel";
 import VehiclePanel from "../components/VehiclePanel";
 import ConfirmRide from "../components/ConfirmRide";
 import LookingForDriver from "../components/LookingForDriver";
+import WaitingForDriver from "../components/WaitingForDriver";
 
 const Home = () => {
-
+  //states
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
   const [vehiclePanel, setVehiclePanel] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
   const [vehicleFound, setVehicleFound] = useState(false);
+  //refs
   const vehiclePanelRef = useRef(null);
   const vehicleFoundRef = useRef(null);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
   const confirmRidePanelRef = useRef(null);
-
+  //submitHandler
   const submitHandler = (e) => {
     e.preventDefault();
   };
-
+//useEffect using useGSAP
   useGSAP(function () {
     if (panelOpen) {
       gsap.to(panelRef.current,
@@ -69,7 +71,6 @@ const Home = () => {
         });
     }
   }, [vehiclePanel]);
-
 
   useGSAP(function () {
     if (confirmRidePanel) {
@@ -172,9 +173,13 @@ const Home = () => {
         <ConfirmRide setConfirmRidePanel={setConfirmRidePanel} setVehicleFound={setVehicleFound} />
       </div>
 
-      {/* Wait for driver Bar */}
+      {/* Looking for a driver Bar */}
       <div ref={vehicleFoundRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
         <LookingForDriver setVehicleFound={setVehicleFound} />
+      </div>
+      {/* Wait for "driver" Bar */}
+      <div className="fixed w-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
+        <WaitingForDriver />
       </div>
 
     </div>
