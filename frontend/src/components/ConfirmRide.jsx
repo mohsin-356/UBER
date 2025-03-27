@@ -28,7 +28,7 @@ const ConfirmRide = () => {
             </div>
           </div>
 
-          <div className='flex items-center gap-5 p-3 border-gray-300 border-b-2'>
+          <div className='flex items-center gap-5 p-3'>
             <i className="text-lg ri-currency-line"></i>
             <div>
               <h3 className='text-lg font-medium'>$120</h3>

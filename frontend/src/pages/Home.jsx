@@ -157,6 +157,11 @@ const Home = () => {
       <div ref={confirmRidePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
         <ConfirmRide  />
       </div>
+
+      {/* Wait for driver Bar */}
+      <div className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
+        
+      </div>
     </div>
   );
 };
