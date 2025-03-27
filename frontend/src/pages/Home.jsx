@@ -5,7 +5,7 @@ import 'remixicon/fonts/remixicon.css'
 import LocationSearchPanel from "../components/LocationSearchPanel";
 import VehiclePanel from "../components/VehiclePanel";
 import ConfirmRide from "../components/ConfirmRide";
-import WaitingForDriver from "../components/WaitingForDriver";
+import LookingForDriver from "../components/LookingForDriver";
 
 const Home = () => {
 
@@ -155,7 +155,7 @@ const Home = () => {
 
       {/* Wait for driver Bar */}
       <div className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
-        <WaitingForDriver />
+        <LookingForDriver />
       </div>
 
     </div>
