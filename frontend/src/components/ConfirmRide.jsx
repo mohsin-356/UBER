@@ -1,5 +1,5 @@
 import React from 'react';
-const ConfirmRide = () => {
+const ConfirmRide = (props) => {
   return (
     <div>
       <h5 onClick={() => {
