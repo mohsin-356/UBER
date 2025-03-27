@@ -12,7 +12,7 @@ const ConfirmRide = () => {
 
         <div className='w-full'>
 
-          <div className='flex items-center gap-5'>
+          <div className='flex items-center gap-5 p-3 border-b-2'>
             <i class="text-lg ri-map-pin-2-fill"></i>
             <div>
               <h3 className='text-lg font-medium'>562/11-A</h3>
@@ -20,7 +20,7 @@ const ConfirmRide = () => {
             </div>
           </div>
 
-          <div className='flex items-center gap-5'>
+          <div className='flex items-center gap-5 p-3 border-b-2'>
           <i className="ri-map-pin-3-line"></i>
             <div>
               <h3 className='text-lg font-medium'>NTU-manawala</h3>
@@ -28,7 +28,7 @@ const ConfirmRide = () => {
             </div>
           </div>
 
-          <div className='flex items-center gap-5'>
+          <div className='flex items-center gap-5 p-3 border-b-2'>
             <i className="text-lg ri-currency-line"></i>
             <div>
               <h3 className='text-lg font-medium'>$120</h3>
