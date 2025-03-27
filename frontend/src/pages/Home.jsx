@@ -5,15 +5,16 @@ import 'remixicon/fonts/remixicon.css'
 import LocationSearchPanel from "../components/LocationSearchPanel";
 import VehiclePanel from "../components/VehiclePanel";
 import ConfirmRide from "../components/ConfirmRide";
+import WaitForDriver from "../components/WaitForDriver";
 
 const Home = () => {
-  
+
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
   const [vehiclePanel, setVehiclePanel] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
-  const vehiclePanelRef=useRef(null);
+  const vehiclePanelRef = useRef(null);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
   const confirmRidePanelRef = useRef(null);
@@ -22,74 +23,68 @@ const Home = () => {
     e.preventDefault();
   };
 
-  useGSAP(function(){
-    if (panelOpen)
-    {
+  useGSAP(function () {
+    if (panelOpen) {
       gsap.to(panelRef.current,
-      {
-        height: '70%',
-        duration: 0.5,
-        opacity: 1,
-        padding: '24px'
-      });
+        {
+          height: '70%',
+          duration: 0.5,
+          opacity: 1,
+          padding: '24px'
+        });
       gsap.to(panelCloseRef.current,
-      {
-        opacity: 1
-      });
+        {
+          opacity: 1
+        });
     }
-    else
-    {
+    else {
       gsap.to(panelRef.current,
-      {
-        height: '0%',
-        duration: 0.5,
-        opacity: 0
-      });
+        {
+          height: '0%',
+          duration: 0.5,
+          opacity: 0
+        });
       gsap.to(panelCloseRef.current,
-      {
-        opacity: 0
-      });
+        {
+          opacity: 0
+        });
     }
   }, [panelOpen]);
 
-  useGSAP(function(){
-    if(vehiclePanel)
-    {
+  useGSAP(function () {
+    if (vehiclePanel) {
       gsap.to(vehiclePanelRef.current,
-      {
-        y: '0%',
-        duration: 0.5
-      });
+        {
+          y: '0%',
+          duration: 0.5
+        });
     }
-    else
-    {
+    else {
       gsap.to(vehiclePanelRef.current,
-      {
-        y: '100%',
-        duration: 0.5
-      });
+        {
+          y: '100%',
+          duration: 0.5
+        });
     }
-  },[vehiclePanel]);
+  }, [vehiclePanel]);
 
-//in progress
-  useGSAP(function(){
-    if(confirmRidePanel)
-    {
+  //in progress
+  useGSAP(function () {
+    if (confirmRidePanel) {
       gsap.to(confirmRidePanelRef.current,
-      {
-        y: '0%',
-        duration: 0.5
-      });
+        {
+          y: '0%',
+          duration: 0.5
+        });
     }
-    else
-    {
+    else {
       gsap.to(confirmRidePanelRef.current,
-      {
-        y: '100%',
-        duration: 0.5
-      });
+        {
+          y: '100%',
+          duration: 0.5
+        });
     }
-  },[confirmRidePanel])
+  }, [confirmRidePanel])
 
   return (
     <div className="h-screen relative overflow-hidden">
@@ -155,13 +150,14 @@ const Home = () => {
       </div>
       {/* Confirm Ride Selection Bar */}
       <div ref={confirmRidePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
-        <ConfirmRide  />
+        <ConfirmRide />
       </div>
 
       {/* Wait for driver Bar */}
       <div className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
-        
+        <WaitForDriver />
       </div>
+
     </div>
   );
 };
