@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WaitForDriver = () => {
+const WaitingForDriver = () => {
     return (
         <div>
             <h5 onClick={() => {
@@ -45,4 +45,4 @@ const WaitForDriver = () => {
     )
 }
 
-export default WaitForDriver
+export default WaitingForDriver
