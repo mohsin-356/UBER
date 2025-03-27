@@ -14,7 +14,9 @@ const Home = () => {
   const [panelOpen, setPanelOpen] = useState(false);
   const [vehiclePanel, setVehiclePanel] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
+  const [vehicleFound, setVehicleFound] = useState(false);
   const vehiclePanelRef = useRef(null);
+  const vehicleFoundRef = useRef(null);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
   const confirmRidePanelRef = useRef(null);
@@ -68,7 +70,7 @@ const Home = () => {
     }
   }, [vehiclePanel]);
 
-  //in progress
+
   useGSAP(function () {
     if (confirmRidePanel) {
       gsap.to(confirmRidePanelRef.current,
@@ -85,6 +87,23 @@ const Home = () => {
         });
     }
   }, [confirmRidePanel])
+  //in progress
+  useGSAP(function () {
+    if (vehicleFound) {
+      gsap.to(vehicleFoundRef.current,
+        {
+          y: '0%',
+          duration: 0.5
+        });
+    }
+    else {
+      gsap.to(vehicleFoundRef.current,
+        {
+          y: '100%',
+          duration: 0.5
+        });
+    }
+  }, [vehicleFound]);
 
   return (
     <div className="h-screen relative overflow-hidden">
@@ -150,11 +169,11 @@ const Home = () => {
       </div>
       {/* Confirm Ride Selection Bar */}
       <div ref={confirmRidePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
-        <ConfirmRide />
+        <ConfirmRide setVehicleFound={setVehicleFound} />
       </div>
 
       {/* Wait for driver Bar */}
-      <div className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
+      <div ref={vehicleFoundRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
         <LookingForDriver />
       </div>
 
