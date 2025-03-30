@@ -28,7 +28,7 @@ const Home = () => {
   const submitHandler = (e) => {
     e.preventDefault();
   };
-//useEffect using useGSAP
+  //useEffect using useGSAP
   useGSAP(function () {
     if (panelOpen) {
       gsap.to(panelRef.current,
@@ -111,12 +111,7 @@ const Home = () => {
   return (
     <div className="h-screen relative overflow-hidden">
       {/* Uber Logo */}
-      <img
-        className="w-16 absolute left-5 top-5"
-        src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
-        alt="Uber Logo"
-      />
-
+      <img className="w-16 absolute left-5 top-5" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="Uber Logo" />
       {/* Background Image */}
       <div className="h-screen w-screen">
         <img
@@ -125,7 +120,6 @@ const Home = () => {
           alt="Background"
         />
       </div>
-
       {/* Bottom Panel */}
       <div className="flex flex-col justify-end h-screen absolute top-0 w-full bottom-0">
         <div className="h-[30%] p-6 bg-white relative">
@@ -165,7 +159,6 @@ const Home = () => {
           <LocationSearchPanel setPanelOpen={setPanelOpen} setVehiclePanel={setVehiclePanel} />
         </div>
       </div>
-
       {/* Vehicle Selection Bar */}
       <div ref={vehiclePanelRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-10 pt-12">
         <VehiclePanel setConfirmRidePanel={setConfirmRidePanel} setVehiclePanel={setVehiclePanel} />
