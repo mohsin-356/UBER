@@ -1,10 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Riding = () => {
     return (
         <div className='h-screen'>
+            <Link to={"/home"} className='fixed right-2 top-2 h-10 w-10 bg-white flex items-center justify-center rounded-full'>
+                <i className="text-lg font-medium ri-home-5-line"></i>
+            </Link>
             <div className='h-1/2'>
-                <img className="w-16 absolute left-5 top-5" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="Uber Logo" />
+                <img
+                    className="h-full w-full object-cover"
+                    src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif"
+                    alt="Background"
+                />
+
             </div>
             <div className='h-1/2 p-4'>
 
