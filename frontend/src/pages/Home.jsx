@@ -90,7 +90,7 @@ const Home = () => {
         });
     }
   }, [confirmRidePanel])
-  //in progress
+
   useGSAP(function () {
     if (vehicleFound) {
       gsap.to(vehicleFoundRef.current,
@@ -107,6 +107,23 @@ const Home = () => {
         });
     }
   }, [vehicleFound]);
+  //in progress
+  useGSAP(function () {
+    if (waitingForDriver) {
+      gsap.to(WaitingForDriverRef.current,
+        {
+          y: '0%',
+          duration: 0.5
+        });
+    }
+    else {
+      gsap.to(WaitingForDriverRef.current,
+        {
+          y: '100%',
+          duration: 0.5
+        });
+    }
+  }, [waitingForDriver]);
 
   return (
     <div className="h-screen relative overflow-hidden">
@@ -173,7 +190,7 @@ const Home = () => {
         <LookingForDriver setVehicleFound={setVehicleFound} />
       </div>
       {/* Wait for "driver" Bar */}
-      <div className="fixed w-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
+      <div ref={WaitingForDriverRef} className="fixed w-full translate-y-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
         <WaitingForDriver setWaitingForDriver={setWaitingForDriver} />
       </div>
 
