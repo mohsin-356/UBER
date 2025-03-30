@@ -18,7 +18,6 @@ const WaitingForDriver = (props) => {
             </div>
 
             <div className='flex gap-2 items-center justify-between flex-col'>
-
                 <div className='w-full mt-5'>
 
                     <div className='flex items-center gap-5 p-3 border-gray-300  border-b-2'>
@@ -47,6 +46,7 @@ const WaitingForDriver = (props) => {
 
                 </div>
             </div>
+
         </div>
     )
 }
