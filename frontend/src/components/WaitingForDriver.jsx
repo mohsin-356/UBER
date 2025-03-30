@@ -8,12 +8,12 @@ const WaitingForDriver = () => {
             }} className="p-1 text-center w-[93%] absolute top-0"><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5>
             <h3 className="text-2xl font-semibold mb-5">Capturing the Captain</h3>
 
-            <div>
-                <img className='h-10' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1652995234/assets/92/8d4288-e896-4333-9bc2-c60c49f2a095/original/UberXL_Black_v2.png" alt="car image" />
-                <div>
-                    <h2>Zeeshan Nazam</h2>
-                    <h4>MP04 AB 1234</h4>
-                    <p>Maruti Suzuki Alto</p>
+            <div className='flex items-center justify-between'>
+                <img className='h-12' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1652995234/assets/92/8d4288-e896-4333-9bc2-c60c49f2a095/original/UberXL_Black_v2.png" alt="car image" />
+                <div className='text-right'>
+                    <h2 className='text-lg font-medium'>Zeeshan Nazam</h2>
+                    <h4 className='text-xl font-semibold -mt-1 -mb-1'>MP04 AB 1234</h4>
+                    <p className='text-sm text-gray-600'>Maruti Suzuki Alto</p>
                 </div>
             </div>
 

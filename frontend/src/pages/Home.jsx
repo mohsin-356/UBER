@@ -16,12 +16,14 @@ const Home = () => {
   const [vehiclePanel, setVehiclePanel] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
   const [vehicleFound, setVehicleFound] = useState(false);
+  const [waitingForDriver, setWaitingForDriver] = useState(false);
   //refs
   const vehiclePanelRef = useRef(null);
   const vehicleFoundRef = useRef(null);
   const panelRef = useRef(null);
   const panelCloseRef = useRef(null);
   const confirmRidePanelRef = useRef(null);
+  const WaitingForDriverRef = useRef(null);
   //submitHandler
   const submitHandler = (e) => {
     e.preventDefault();
@@ -179,7 +181,7 @@ const Home = () => {
       </div>
       {/* Wait for "driver" Bar */}
       <div className="fixed w-full z-10 bottom-0 bg-white px-3 py-6 pt-12">
-        <WaitingForDriver />
+        <WaitingForDriver setWaitingForDriver={setWaitingForDriver} />
       </div>
 
     </div>
