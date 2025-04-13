@@ -30,20 +30,20 @@ const CaptainHome = () => {
                 </div>
 
                 <div>
-                    <div>
-                        <i className='ri-timer-2-line'></i>
+                    <div className='text-center'>
+                        <i className='text-2xl font-thin ri-timer-2-line'></i>
                         <h5>10.2</h5>
                         <p>Hours Online</p>
                     </div>
 
-                    <div>
-                        <i className='ri-speed-up-fill'></i>
+                    <div className='text-center'>
+                        <i className='text-2xl font-thin ri-speed-up-fill'></i>
                         <h5>10.2</h5>
                         <p>Hours Online</p>
                     </div>
 
-                    <div>
-                        <i className='ri-booklet-line'></i>
+                    <div className='text-center'>
+                        <i className='text-2xl font-thin ri-booklet-line'></i>
                         <h5>10.2</h5>
                         <p>Hours Online</p>
                     </div>
