@@ -18,8 +18,17 @@ const CaptainHome = () => {
             </div>
 
             <div className='h-1/2 p-4'>
+            <div>
+                <div>
+                    <img src="" alt="" />
+                    <h4>Usman Patel</h4>
+                </div>
+                <div>
+                    <h4>$295.2</h4>
+                </div>
+            </div>
 
-                <div className='flex items-center justify-between'>
+                {/* <div className='flex items-center justify-between'>
                     <img className='h-12' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1652995234/assets/92/8d4288-e896-4333-9bc2-c60c49f2a095/original/UberXL_Black_v2.png" alt="car image" />
                     <div className='text-right'>
                         <h2 className='text-lg font-medium'>Zeeshan Nazam</h2>
@@ -27,7 +36,6 @@ const CaptainHome = () => {
                         <p className='text-sm text-gray-600'>Maruti Suzuki Alto</p>
                     </div>
                 </div>
-
                 <div className='flex gap-2 items-center justify-between flex-col'>
                     <div className='w-full mt-5'>
 
@@ -49,8 +57,8 @@ const CaptainHome = () => {
 
                     </div>
                 </div>
+                <button className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg' >Make a Payment</button> */}
 
-                <button className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg' >Make a Payment</button>
             </div>
         </div>
     )
