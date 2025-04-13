@@ -25,6 +25,7 @@ const CaptainHome = () => {
                 </div>
                 <div>
                     <h4>$295.2</h4>
+                    <p>Earned</p>
                 </div>
             </div>
 
