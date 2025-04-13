@@ -25,7 +25,7 @@ const CaptainHome = () => {
                 </div>
                 </div>
 
-                <div className='flex p-3 bg-gray-50 justify-center gap-5 items-start'>
+                <div className='flex p-3 mt-6 bg-gray-50 justify-center gap-5 items-start'>
                     <div className='text-center'>
                         <i className='text-3xl mb-2 font-thin ri-timer-2-line'></i>
                         <h5 className='text-lg font-medium'>10.2</h5>
