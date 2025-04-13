@@ -3,18 +3,14 @@ import { Link } from 'react-router-dom'
 const CaptainHome = () => {
     return (
         <div className='h-screen'>
-           <div className='fixed p-3 top-0 flex items-center justify-between w-screen'>
+           <div className='fixed p-6 top-0 flex items-center justify-between w-screen'>
             <img className='w-16' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="" />
             <Link to='/home' className='h-10 w-10 bg-white flex items-center justify-center rounded-full'>
                 <i className="text-lg font-medium ri-home-5-line"></i>
             </Link>
            </div>
             <div className='h-1/2'>
-                <img
-                    className="h-full w-full object-cover"
-                    src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif"
-                    alt="Background"
-                />
+                <img className="h-full w-full object-cover" src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif" alt="Background"/>
             </div>
 
             <div className='h-1/2 p-4'>
@@ -29,7 +25,7 @@ const CaptainHome = () => {
                 </div>
                 </div>
 
-                <div className='flex p-3 justify-center gap-5 items-start'>
+                <div className='flex p-3 bg-gray-50 justify-center gap-5 items-start'>
                     <div className='text-center'>
                         <i className='text-3xl mb-2 font-thin ri-timer-2-line'></i>
                         <h5 className='text-lg font-medium'>10.2</h5>
