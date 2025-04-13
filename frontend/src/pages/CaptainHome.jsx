@@ -25,7 +25,7 @@ const CaptainHome = () => {
                 </div>
                 <div>
                     <h4 className='text-xl font-semibold'>$295.2</h4>
-                    <p>Earned</p>
+                    <p className='text-sm font-medium bg-gray-600'>Earned</p>
                 </div>
                 </div>
 
