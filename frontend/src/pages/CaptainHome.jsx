@@ -29,21 +29,21 @@ const CaptainHome = () => {
                 </div>
                 </div>
 
-                <div>
+                <div className='flex justify-center gap-5 items-start'>
                     <div className='text-center'>
-                        <i className='text-2xl font-thin ri-timer-2-line'></i>
+                        <i className='text-3xl font-thin ri-timer-2-line'></i>
                         <h5>10.2</h5>
                         <p className='text-sm text-gray-600'>Hours Online</p>
                     </div>
 
                     <div className='text-center'>
-                        <i className='text-2xl font-thin ri-speed-up-fill'></i>
+                        <i className='text-3xl font-thin ri-speed-up-fill'></i>
                         <h5>10.2</h5>
                         <p className='text-sm text-gray-600'>Hours Online</p>
                     </div>
 
                     <div className='text-center'>
-                        <i className='text-2xl font-thin ri-booklet-line'></i>
+                        <i className='text-3xl font-thin ri-booklet-line'></i>
                         <h5>10.2</h5>
                         <p className='text-sm text-gray-600'>Hours Online</p>
                     </div>
