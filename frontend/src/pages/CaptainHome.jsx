@@ -18,7 +18,7 @@ const CaptainHome = () => {
             </div>
 
             <div className='h-1/2 p-4'>
-            <div>
+                <div>
                 <div>
                     <img src="" alt="" />
                     <h4>Usman Patel</h4>
@@ -27,13 +27,21 @@ const CaptainHome = () => {
                     <h4>$295.2</h4>
                     <p>Earned</p>
                 </div>
-            </div>
+                </div>
 
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+                <div>
+                    <div>
+                        <i className='ri-timer-2-line'></i>
+                    </div>
+
+                    <div>
+                        <i className='ri-speed-up-fill'></i>
+                    </div>
+
+                    <div>
+                        <i className='ri-booklet-nine'></i>
+                    </div>
+                </div>
 
                 {/* <div className='flex items-center justify-between'>
                     <img className='h-12' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1652995234/assets/92/8d4288-e896-4333-9bc2-c60c49f2a095/original/UberXL_Black_v2.png" alt="car image" />
