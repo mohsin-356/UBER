@@ -20,7 +20,7 @@ const CaptainHome = () => {
             <div className='h-1/2 p-4'>
                 <div>
                 <div>
-                    <img src="" alt="" />
+                    <img className='flex items-center justify-between' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdlMd7stpWUCmjpfRjUsQ72xSWikidbgaI1w&s" alt="" />
                     <h4>Usman Patel</h4>
                 </div>
                 <div>
@@ -33,19 +33,19 @@ const CaptainHome = () => {
                     <div className='text-center'>
                         <i className='text-2xl font-thin ri-timer-2-line'></i>
                         <h5>10.2</h5>
-                        <p>Hours Online</p>
+                        <p className='text-sm text-gray-600'>Hours Online</p>
                     </div>
 
                     <div className='text-center'>
                         <i className='text-2xl font-thin ri-speed-up-fill'></i>
                         <h5>10.2</h5>
-                        <p>Hours Online</p>
+                        <p className='text-sm text-gray-600'>Hours Online</p>
                     </div>
 
                     <div className='text-center'>
                         <i className='text-2xl font-thin ri-booklet-line'></i>
                         <h5>10.2</h5>
-                        <p>Hours Online</p>
+                        <p className='text-sm text-gray-600'>Hours Online</p>
                     </div>
                 </div>
 
