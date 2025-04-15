@@ -10,6 +10,7 @@ const RidePopUp = () => {
             <div>
                 <div>
                     <img className='h-12 w-12 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdlMd7stpWUCmjpfRjUsQ72xSWikidbgaI1w&s" alt="" />
+                    <h2>John Wick</h2>
                 </div>
             </div>
             <div className='flex gap-2 items-center justify-between flex-col'>
