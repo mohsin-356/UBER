@@ -7,11 +7,12 @@ const RidePopUp = () => {
                 props.setConfirmRidePanel(false);
             }} className="p-1 text-center w-[93%] absolute top-0"><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5>
             <h3 className="text-2xl font-semibold mb-5">New Ride Available !</h3>
-            <div>
-                <div>
+            <div className='flex items-center justify-between'>
+                <div className='flex items-center gap-3'>
                     <img className='h-12 w-12 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdlMd7stpWUCmjpfRjUsQ72xSWikidbgaI1w&s" alt="" />
-                    <h2>John Wick</h2>
+                    <h2 className='text-xl font-medium'>John Wick</h2>
                 </div>
+                <h5>2.2 KM</h5>
             </div>
             <div className='flex gap-2 items-center justify-between flex-col'>
                 {/* <img className='h-20' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1652995234/assets/92/8d4288-e896-4333-9bc2-c60c49f2a095/original/UberXL_Black_v2.png" alt="" /> */}
