@@ -9,7 +9,7 @@ const RidePopUp = () => {
             <h3 className="text-2xl font-semibold mb-5">New Ride Available !</h3>
             <div>
                 <div>
-                    <img className='h-10 w-12' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdlMd7stpWUCmjpfRjUsQ72xSWikidbgaI1w&s" alt="" />
+                    <img className='h-12 w-12 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdlMd7stpWUCmjpfRjUsQ72xSWikidbgaI1w&s" alt="" />
                 </div>
             </div>
             <div className='flex gap-2 items-center justify-between flex-col'>
