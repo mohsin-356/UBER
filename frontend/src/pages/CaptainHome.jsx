@@ -12,11 +12,11 @@ const CaptainHome = () => {
     {
         if(ridePopupPanel){
             gsap.to(ridePopupPanelRef.current,{
-                transform:'translateY(0)',//translateY(0) means it will be visible
+                transform:'translateY(0%)',//translateY(0) means it will be visible
             })
         }else{
             gsap.to(ridePopupPanelRef.current,{
-                transform:'translateY(100)',//translateY(100) means it will be hidden
+                transform:'translateY(100%)',//translateY(100) means it will be hidden
             })
         }
     },[ridePopupPanel]);    
