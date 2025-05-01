@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { Link } from 'react-router-dom'
 import CaptainDetails from '../components/CaptainDetails';
 import RidePopUp from '../components/RidePopUp';

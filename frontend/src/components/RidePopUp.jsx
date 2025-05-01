@@ -4,7 +4,7 @@ const RidePopUp = (props) => {
     return (
         <div>
             <h5 onClick={() => {
-                props.setConfirmRidePanel(false);
+                props.setRidePopupPanel(false);
             }} className="p-1 text-center w-[93%] absolute top-0"><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5>
             <h3 className="text-2xl font-semibold mb-5">New Ride Available !</h3>
             <div className='flex items-center justify-between p-3 bg-gray-200 rounded-lg mt-4'>
@@ -20,7 +20,7 @@ const RidePopUp = (props) => {
                 <div className='w-full mt-5'>
 
                     <div className='flex items-center gap-5 p-3 border-gray-300  border-b-2'>
-                        <i class="text-lg ri-map-pin-2-fill"></i>
+                        <i className="text-lg ri-map-pin-2-fill"></i>
                         <div>
                             <h3 className='text-lg font-medium'>562/11-A</h3>
                             <p className='text-sm -mt-1 text-gray-600'>Saleemi chowk,Faisalabad</p>
@@ -46,11 +46,11 @@ const RidePopUp = (props) => {
                 </div>
 
                 <button onClick={() => {
-                    props.setVehicleFound(true);
+                    // props.setVehicleFound(true);
                 }} className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Confirm</button>
 
                 <button onClick={() => {
-
+                    props.setRidePopupPanel(false);
                 }} className='w-full mt-5 bg-black text-white font-semibold p-2 rounded-lg'>Ignore</button>
 
             </div>
