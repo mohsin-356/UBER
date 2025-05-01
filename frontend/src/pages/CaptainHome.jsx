@@ -11,16 +11,11 @@ const CaptainHome = () => {
     {
         if(ridePopupPanel){
             gsap.to(ridePopupPanelRef.current,{
-                height:'100%',
-                duration:0.5,
-                opacity:1,
-                padding:'24px'
+                transform:'translateY(0)',//translateY(0) means it will be visible
             })
         }else{
             gsap.to(ridePopupPanelRef.current,{
-                height:'0%',
-                duration:0.5,
-                opacity:0
+                transform:'translateY(100)',//translateY(100) means it will be hidden
             })
         }
     },[ridePopupPanel]);    
@@ -39,8 +34,8 @@ const CaptainHome = () => {
             <div className='h-2/5 p-6'>
                 <CaptainDetails />
             </div>
-            <div ref={ridePopupPanelRef} className="fixed w-full z-10 bottom-0 bg-white px-3 py-10 pt-12">
-               <RidePopUp/>
+            <div ref={ridePopupPanelRef} className="fixed w-full z-10 bottom-0 bg-white translate-y-full px-3 py-10 pt-12">
+               <RidePopUp setRidePopupPanel={setRidePopupPanel} />
             </div>
         </div>
     )

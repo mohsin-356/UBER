@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RidePopUp = () => {
+const RidePopUp = (props) => {
     return (
         <div>
             <h5 onClick={() => {
