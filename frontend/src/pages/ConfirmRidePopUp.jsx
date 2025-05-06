@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ConfirmRidePopUp = () => {
   return (
@@ -6,4 +6,4 @@ const ConfirmRidePopUp = () => {
   )
 }
 
-export default ConfirmRidePopUp
+export default ConfirmRidePopUp;
