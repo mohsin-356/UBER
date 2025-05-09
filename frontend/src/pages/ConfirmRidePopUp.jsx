@@ -46,7 +46,7 @@ const ConfirmRidePopUp = (props) => {
 
         </div>
 
-        <Link to='captain-riding' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-2 rounded-lg'>Confirm Ride</Link>
+        <Link to='/captain-riding' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-2 rounded-lg'>Confirm Ride</Link>
 
         <button onClick={() => {
           props.setConfirmRidePopupPanel(false);
