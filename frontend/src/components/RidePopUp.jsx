@@ -46,13 +46,13 @@ const RidePopUp = (props) => {
                 </div>
                 <div>
 
-                <button onClick={() => {
-                    props.setConfirmRidePopupPanel(true);
-                }} className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Accept</button>
+                    <button onClick={() => {
+                        props.setRidePopupPanel(false);
+                    }} className='w-full mt-5 bg-black text-white font-semibold p-2 rounded-lg'>Ignore</button>
+                    <button onClick={() => {
+                        props.setConfirmRidePopupPanel(true);
+                    }} className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Accept</button>
 
-                <button onClick={() => {
-                    props.setRidePopupPanel(false);
-                }} className='w-full mt-5 bg-black text-white font-semibold p-2 rounded-lg'>Ignore</button>
                 </div>
             </div>
         </div>
