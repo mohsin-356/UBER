@@ -13,6 +13,7 @@ import UserLogout from './pages/UserLogout';
 import CaptainLogout from './pages/CaptainLogout';
 import CaptainHome from './pages/CaptainHome';
 import Riding from './pages/Riding';
+import CaptainRiding from './pages/CaptainRiding';
 
 const App = () => {
   const ans = useContext(UserDataContext);
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/login" exact element={<UserLogin />} />
         <Route path="/signup" exact element={<UserSignup />} />
         <Route path="/riding" exact element={<Riding />} />
+        <Route path="/captain-riding" exact element={<CaptainRiding />} />
         <Route path="/captain-login" exact element={<CaptainLogin />} />
         <Route path="/captain-signup" exact element={<CaptainSignup />} />
        
