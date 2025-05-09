@@ -46,7 +46,7 @@ const RidePopUp = (props) => {
                 </div>
 
                 <button onClick={() => {
-                    // props.setVehicleFound(true);
+                    props.setConfirmRidePopupPanel(true);
                 }} className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Accept</button>
 
                 <button onClick={() => {
