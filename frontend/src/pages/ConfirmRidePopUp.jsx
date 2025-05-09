@@ -50,7 +50,7 @@ const ConfirmRidePopUp = () => {
         }} className='w-full mt-5 bg-green-600 text-white font-semibold p-2 rounded-lg'>Confirm Ride</button>
 
         <button onClick={() => {
-          props.setRidePopupPanel(false);
+          props.setConfirmRidePopupPanel(false);
         }} className='w-full mt-5 bg-black text-white font-semibold p-2 rounded-lg'>Cancel</button>
 
       </div>
