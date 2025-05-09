@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CaptainRiding = () => {
   return (
@@ -14,14 +15,8 @@ const CaptainRiding = () => {
             </div>
 
             <div className='h-2/5 p-6'>
-                <CaptainDetails />
-            </div>
-            <div ref={ridePopupPanelRef} className="fixed w-full z-10 bottom-0 bg-white translate-y-full px-3 py-10 pt-12">
-               <RidePopUp setRidePopupPanel={setRidePopupPanel} setConfirmRidePopupPanel={setConfirmRidePopupPanel} />
-            </div>
-
-            <div ref={confirmRidePopupPanelRef} className="fixed h-screen w-full z-10 bottom-0 bg-white translate-y-full px-3 py-10 pt-12">
-               <ConfirmRidePopUp setConfirmRidePopupPanel={setConfirmRidePopupPanel} setRidePopupPanel={setRidePopupPanel} />
+                {/* <CaptainDetails /> */}
+                <h1>my name is khan</h1>
             </div>
         </div>
   )
