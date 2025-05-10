@@ -14,9 +14,9 @@ const CaptainRiding = () => {
                 <img className="h-full w-full object-cover" src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif" alt="Background" />
             </div>
 
-            <div className='h-2/5 p-6'>
-                {/* <CaptainDetails /> */}
-                <h1>my name is khan</h1>
+            <div className='h-1/5 p-6 flex items-center justify-between bg-yellow-300'>
+                <h1 className='text-xl'>4KM away</h1>
+                <button className='bg-green-600 text-white font-semibold p-3 px-10 rounded-lg'>Complete Ride</button>
             </div>
         </div>
   )
