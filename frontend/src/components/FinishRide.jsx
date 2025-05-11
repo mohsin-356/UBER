@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 const FinishRide = () => {
     return (
         <div>
@@ -50,9 +50,6 @@ const FinishRide = () => {
                     }}>
                         <input type='text' placeholder='enter OTP' className="bg-[#eee] px-6 py-4 font-mono text-lg rounded-lg w-full mt-3" />
                         <Link to='/captain-riding' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-2 rounded-lg'>Confirm Ride</Link>
-                        <button onClick={() => {
-                            props.setConfirmRidePopupPanel(false);
-                        }} className='w-full mt-5 bg-black text-white font-semibold p-2 rounded-lg'>Cancel</button>
                     </form>
                 </div>
             </div>
