@@ -6,7 +6,7 @@ const FinishRide = () => {
             <h5 className="p-1 text-center w-[93%] absolute top-0" onClick={() => {
                 props.setConfirmRidePopupPanel(false);
             }}  ><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5>
-            <h3 className="text-2xl font-semibold mb-5">One step to go 😊 !</h3>
+            <h3 className="text-2xl font-semibold mb-5">Finish this ride 😊</h3>
             <div className='flex items-center justify-between p-3 bg-gray-200 rounded-lg mt-4'>
                 <div className='flex items-center gap-3'>
                     <img className='h-12 w-12 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdlMd7stpWUCmjpfRjUsQ72xSWikidbgaI1w&s" alt="" />
@@ -44,9 +44,8 @@ const FinishRide = () => {
                     </div>
 
                 </div>
-                <div className='mt-6'>
-                        <input type='text' placeholder='enter OTP' className="bg-[#eee] px-6 py-4 font-mono text-lg rounded-lg w-full mt-3" />
-                        <Link to='/captain-riding' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-2 rounded-lg'>Complete Ride</Link>
+                <div className='mt-6 w-full'>
+                        <Link to='/captain-riding' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-3 rounded-lg'>Complete Ride</Link>
                 </div>
             </div>
         </div>
