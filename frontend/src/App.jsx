@@ -18,8 +18,6 @@ import 'remixicon/fonts/remixicon.css';
 
 const App = () => {
   const ans = useContext(UserDataContext);
-
-
   return (
     <div >
       <Routes>
@@ -51,5 +49,4 @@ const App = () => {
     </div>
   )
 }
-
 export default App;
