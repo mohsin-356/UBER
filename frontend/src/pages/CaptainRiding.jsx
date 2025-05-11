@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 
 const CaptainRiding = () => {
 
-    const[finishRidePanel,setFinishRidePanel]=useState(false);
-    const finishRidePanelRef=useRef(null);
+    const [finishRidePanel, setFinishRidePanel] = useState(false);
+    const finishRidePanelRef = useRef(null);
 
     useGSAP(function () {
-        if (confirmRidePopupPanel) {
+        if (finishRidePanel) {
             gsap.to(finishRidePanelRef.current, {
                 transform: 'translateY(0%)'
             })
-        } else {
+        }
+        else {
             gsap.to(finishRidePanelRef.current, {
                 transform: 'translateY(100%)'
             })
