@@ -45,12 +45,8 @@ const FinishRide = () => {
 
                 </div>
                 <div className='mt-6'>
-                    <form onSubmit={(e) => {
-                        submitHandler(e);
-                    }}>
                         <input type='text' placeholder='enter OTP' className="bg-[#eee] px-6 py-4 font-mono text-lg rounded-lg w-full mt-3" />
-                        <Link to='/captain-riding' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-2 rounded-lg'>Confirm Ride</Link>
-                    </form>
+                        <Link to='/captain-riding' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-2 rounded-lg'>Complete Ride</Link>
                 </div>
             </div>
         </div>
