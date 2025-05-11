@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const CaptainRiding = () => {
 
-    useState(false)
-
+    const[finishRidePanel,setFinishRidePanel]=useState(false);
+    const finishRidePanelRef=useRef(null);
+    
     useGSAP(function () {
         if (confirmRidePopupPanel) {
             gsap.to(confirmRidePopupPanelRef.current, {
