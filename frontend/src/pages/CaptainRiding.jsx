@@ -5,14 +5,14 @@ const CaptainRiding = () => {
 
     const[finishRidePanel,setFinishRidePanel]=useState(false);
     const finishRidePanelRef=useRef(null);
-    
+
     useGSAP(function () {
         if (confirmRidePopupPanel) {
-            gsap.to(confirmRidePopupPanelRef.current, {
+            gsap.to(finishRidePanelRef.current, {
                 transform: 'translateY(0%)'
             })
         } else {
-            gsap.to(confirmRidePopupPanelRef.current, {
+            gsap.to(finishRidePanelRef.current, {
                 transform: 'translateY(100%)'
             })
         }
