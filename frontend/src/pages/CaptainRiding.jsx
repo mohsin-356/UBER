@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FinishRide from '../components/FinishRide';
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const CaptainRiding = () => {
 
@@ -34,7 +36,7 @@ const CaptainRiding = () => {
                 <img className="h-full w-full object-cover" src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif" alt="Background" />
             </div>
 
-            <div onClick={()=>{
+            <div onClick={() => {
                 setFinishRidePanel(true);
             }} className='h-1/5 p-6 flex items-center justify-between relative bg-yellow-300 pt-10'>
                 <h5 className="p-1 text-center w-[95%] absolute top-0" onClick={() => {
