@@ -36,16 +36,17 @@ const CaptainRiding = () => {
                 <img className="h-full w-full object-cover" src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif" alt="Background" />
             </div>
 
-            <div onClick={() => {
-                setFinishRidePanel(true);
-            }} className='h-1/5 p-6 flex items-center justify-between relative bg-yellow-300 pt-10'>
-                <h5 className="p-1 text-center w-[95%] absolute top-0" onClick={() => {
-                }}  ><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5>
+            <div className='h-1/5 p-6 flex items-center justify-between relative bg-yellow-300 pt-10'>
+                {/* <h5 className="p-1 text-center w-[95%] absolute top-0" onClick={() => {
+                }}  ><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5> */}
                 <h1 className='text-xl font-semibold'>4KM away</h1>
                 <button className='bg-green-600 text-white font-semibold p-3 px-10 rounded-lg'>Complete Ride</button>
             </div>
 
-            <div ref={finishRidePanelRef} className="fixed w-full z-10 bottom-0 bg-white translate-y-full px-3 py-10 pt-12">
+            <div onClick={() => {
+                setFinishRidePanel(true);
+            }}
+            ref={finishRidePanelRef} className="fixed w-full z-10 bottom-0 bg-white translate-y-full px-3 py-10 pt-12">
                 <FinishRide setFinishRidePanel={setFinishRidePanel} />
             </div>
 
