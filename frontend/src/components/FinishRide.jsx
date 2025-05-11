@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-const FinishRide = () => {
+const FinishRide = (props) => {
     return (
         <div>
             <h5 className="p-1 text-center w-[93%] absolute top-0" onClick={() => {
-                props.setConfirmRidePopupPanel(false);
+                props.setFinishRidePanel(false);
             }}  ><i className="text-3xl text-gray-500 ri-arrow-down-wide-line"></i></h5>
             <h3 className="text-2xl font-semibold mb-5">Finish this ride 😊</h3>
             <div className='flex items-center justify-between p-3 bg-gray-200 rounded-lg mt-4'>
