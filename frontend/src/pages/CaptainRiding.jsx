@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import FinishRide from '../components/FinishRide';
 
 const CaptainRiding = () => {
 
@@ -17,7 +18,7 @@ const CaptainRiding = () => {
                 transform: 'translateY(100%)'
             })
         }
-    }, [confirmRidePopupPanel]);
+    }, [finishRidePanel]);
 
     return (
         <div className='h-screen'>
@@ -40,8 +41,8 @@ const CaptainRiding = () => {
                 <button className='bg-green-600 text-white font-semibold p-3 px-10 rounded-lg'>Complete Ride</button>
             </div>
 
-            <div ref={ridePopupPanelRef} className="fixed w-full z-10 bottom-0 bg-white translate-y-full px-3 py-10 pt-12">
-                <RidePopUp setRidePopupPanel={setRidePopupPanel} setConfirmRidePopupPanel={setConfirmRidePopupPanel} />
+            <div ref={finishRidePanelRef} className="fixed w-full z-10 bottom-0 bg-white translate-y-full px-3 py-10 pt-12">
+                <FinishRide />
             </div>
 
         </div>
