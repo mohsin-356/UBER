@@ -45,7 +45,7 @@ const FinishRide = (props) => {
 
                 </div>
                 <div className='mt-6 w-full'>
-                        <Link to='/captain-riding' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-3 rounded-lg'>Finish Ride</Link>
+                        <Link to='/captain-home' className='w-full mt-5 flex justify-center bg-green-600 text-white font-semibold p-3 rounded-lg'>Finish Ride</Link>
                         <p className='mt-10 text-xs'>click the finish ride button if you have completed the payment</p>
                 </div>
             </div>
