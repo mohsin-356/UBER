@@ -1,4 +1,3 @@
-// now i will write a api code that will get the logitude and latitude of a given address using maptiler api key
 const axios = require('axios');
 const getAddressCoordinate = async (address) => {
     try {
