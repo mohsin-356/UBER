@@ -1,7 +1,9 @@
 const axios = require('axios');
+const dotenv = require('dotenv');
+dotenv.config();
 const getAddressCoordinate = async (address) => {
     try {
-        const apiKey =  process.env.MAP // Replace with your MapTiler API key
+        const apiKey = process.env.MAPTILER_API_KEY;
         const url = `https://api.maptiler.com/geocoding/${encodeURIComponent(address)}.json?key=${apiKey}`;
         const response = await axios.get(url);
         
