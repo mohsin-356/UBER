@@ -9,6 +9,6 @@ module.exports.getCoordinates = async (req, res) => {
         return res.status(200).json({ coordinates });
     } catch (error) {
         console.error('Error fetching coordinates:', error.message);
-        return res.status(500).json({ message: 'Internal server error' });
+        return res.status(404).json({ message: 'coordinates not found' });
     }
 };
