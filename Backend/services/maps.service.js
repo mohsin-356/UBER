@@ -30,19 +30,29 @@ module.exports.getDistanceAndTime = async (origin, destination) => {
     throw new Error("Origin and destination are required.");
   }
   const apiKey = process.env.MAPTILER_API_KEY;
-  const url = `https://api.maptiler.com/route/?key=${apiKey}&start=${encodeURIComponent(
-    origin
-  )}&end=${encodeURIComponent(destination)}`;
+  const url = `https://api.maptiler.com/route/?key=${apiKey}&start=${encodeURIComponent(origin)}&end=${encodeURIComponent(destination)}`;
   try {
     const response = await axios.get(url);
-    if (response.data.status === "OK" && response.data.routes.length > 0)
+    // if (response.data.status === "OK" && response.data.routes.length > 0)
+    // {
+    //   const { distance, duration } = response.data.routes[0];
+    //   return { distance, duration };
+    // }
+    if(response.data.status==='OK')
     {
-      const { distance, duration } = response.data.routes[0];
-      return { distance, duration };
+        if(response.data.rows[0].elements[0].status==='ZERO_RESULTS')
+        {
+            throw new Error(`No route found between the given ${origin} and ${destination}.`);
+        }
+        return response.data.rows[0].elements[0];
+        // return {
+        //     distance: response.data.rows[0].elements[0].distance,
+        //     duration: response.data.rows[0].elements[0].duration
+        // };
     }
     else
     {
-      throw new Error("No route found between the given locations.");
+      throw new Error("Unable to find distance and time for the given route.");
     }
   } catch (error) {
     console.error("Error fetching distance and time:", error.message);
