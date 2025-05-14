@@ -27,7 +27,7 @@ module.exports.getAddressCoordinate = async (address) => {
 };
 
 async function geocodeLocation(location) {
-  const geoUrl = `https://api.maptiler.com/geocoding/${encodeURIComponent(location)}.json?key=${MAPTILER_API_KEY}`;
+  const geoUrl = `https://api.maptiler.com/geocoding/${encodeURIComponent(location)}.json?key=${process.env.MAPTILER_API_KEY}`;
   const response = await axios.get(geoUrl);
 
   if (
@@ -41,43 +41,36 @@ async function geocodeLocation(location) {
     throw new Error(`Geocoding failed for location: ${location}`);
   }
 }
-
 module.exports.getDistanceAndTime = async (origin, destination) => {
-  if (!origin || !destination) {
-    throw new Error("Origin and destination are required.");
-  }
-
-  try {
-    // Step 1: Geocode both locations
-    const originCoords = await geocodeLocation(origin);
-    const destinationCoords = await geocodeLocation(destination);
-
-    const routeUrl = `https://api.maptiler.com/route/driving/${originCoords.lng},${originCoords.lat},${destinationCoords.lng},${destinationCoords.lat}/geojson?key=${MAPTILER_API_KEY}`;
-
-    const routeResponse = await axios.get(routeUrl);
-
-    if (routeResponse.status === 200 && routeResponse.data) {
-      const features = routeResponse.data.features;
-
-      if (features.length > 0) {
-        const route = features[0];
-        const { distance, duration } = route.properties;
-
-        return {
-          distance: distance, // in meters
-          duration: duration  // in seconds
-        };
-      } else {
-        throw new Error("No route found between the locations.");
-      }
-    } else {
-      throw new Error("Routing API failed to fetch data.");
+    if (!origin || !destination) {
+        throw new Error("Origin and destination are required.");
     }
 
-  } catch (error) {
-    console.error("Error fetching distance and time:", error.message);
-    throw error;
-  }
+    try {
+        // Step 1: Geocode both locations
+        const originCoords = await geocodeLocation(origin);
+        const destinationCoords = await geocodeLocation(destination);
+        console.log(`Origin Coordinates: ${JSON.stringify(originCoords)}, Destination Coordinates: ${JSON.stringify(destinationCoords)}`);
+
+        // Step 2: Use MapTiler Routing API
+        const routeUrl = `https://api.maptiler.com/routes/directions/v2/${originCoords.lng},${originCoords.lat};${destinationCoords.lng},${destinationCoords.lat}?key=${process.env.MAPTILER_API_KEY}`;
+
+        const routeResponse = await axios.get(routeUrl);
+
+        if (routeResponse.status === 200 && routeResponse.data.features && routeResponse.data.features.length > 0) {
+            const { distance, duration } = routeResponse.data.features[0].properties;
+
+            return {
+                distance: distance, // in meters
+                duration: duration  // in seconds
+            };
+        } else {
+            throw new Error("No route found between the locations.");
+        }
+    } catch (error) {
+        console.error("Error fetching distance and time:", error.message);
+        throw error;
+    }
 };
 
 
